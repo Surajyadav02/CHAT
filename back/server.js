@@ -12,7 +12,7 @@ dotenv.config();
 connectDB();
 
 const app = express();
-const port = 5000;
+
 const hostname = "127.0.0.1";
 
 app.use(express.json());
@@ -43,8 +43,8 @@ app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
-const server = app.listen(port, hostname, () => {
-  console.log(`server running at http://${hostname}:${port}/`.white.bold);
+const server = app.listen(PORT, hostname, () => {
+  console.log(`server running at http://${hostname}:${PORT}/`.white.bold);
 });
 
 const io = require("socket.io")(server, {
